@@ -7,6 +7,4 @@ Add the path of the Moon-icon, Sun-icon, History-icon by removing the fake paths
 
 # Overview
 
-![alt text](https://github.com/Normo1186/py-calc/blob/main/overview/calc-in-dark-mode.png?raw=true)
-![alt text](https://github.com/Normo1186/py-calc/blob/main/overview/calc-in-light-mode.png?raw=true)
-![alt text](https://github.com/Normo1186/py-calc/blob/main/overview/history-window.png?raw=true)
+![alt text](https://github.com/Normo1186/py-calc/blob/main/overview/overview.png?raw=true)
