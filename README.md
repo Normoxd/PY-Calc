@@ -1,12 +1,13 @@
 # py-calc
 A simple calculator based on python
 
-(This is not made for everyday use, just little fun project)
+*(This is not made for everyday use, just little fun project)*
 
 # NOTE
-You have to make these changes to the line 10,11,12 to actually make it work 
+To make it work, you need to update the 10th, 11th, and 12th lines of the code:
 
-Add the path of the Moon-icon, Sun-icon, History-icon by removing the fake paths and adding your paths of those files (You can find in this repo or you can make yout own ones)
+- Replace the placeholder paths for the Moon-icon, Sun-icon, and History-icon with the actual paths to your icon files.
+- You can use the icons provided in this repository or create your own.
 
 # Overview
 
