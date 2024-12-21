@@ -1,11 +1,5 @@
-# In case if you did not saw the readme, read the note down below
-
-# NOTE: You have to make these changes to the line 10,11,12 to actually make it work
-
-# Add the path of the Moon-icon, Sun-icon, History-icon by removing the fake path and adding your paths of those files (You can download them via a zip file in this repo or make your own ones)
-
 import tkinter as tk
-from tkinter import PhotoImage
+from tkinter import PhotoImage, Toplevel
 
 root = tk.Tk()
 root.title("Calculator")
@@ -14,13 +8,14 @@ root.resizable(0, 0)
 
 try:
     moon_icon = PhotoImage(file="/path/to/moon.png").subsample(6, 6)
-    sun_icon = PhotoImage(file="/path/to/sun-icon.png").subsample(6, 6)
+    sun_icon = PhotoImage(file="/path/to/sun.png").subsample(6, 6)
     history_icon = PhotoImage(file="/path/to/clock.png").subsample(6, 6)
 except Exception as e:
     print(f"Error loading icons: {e}")
     root.destroy()
 
 is_dark_mode = True
+previous_calculations = []
 
 def switch_mode():
     global is_dark_mode
@@ -59,12 +54,42 @@ def button_clear():
 
 def button_equal():
     try:
-        result = str(eval(entry.get()))
+        calculation = entry.get()
+        result = str(eval(calculation))
+        previous_calculations.append((calculation, result))
         entry.delete(0, tk.END)
         entry.insert(0, result)
     except:
         entry.delete(0, tk.END)
         entry.insert(0, "Error")
+
+def open_history():
+    history_window = Toplevel(root)
+    history_window.title("History")
+    history_window.geometry("300x400")
+
+    def copy_selected():
+        try:
+            selected_text = history_text.selection_get()
+            root.clipboard_clear()
+            root.clipboard_append(selected_text)
+            root.update()
+        except:
+            pass
+
+    history_text = tk.Text(history_window, wrap=tk.WORD, font=('Google Sans', 14), bg="#f0f0f0")
+    history_text.pack(expand=True, fill=tk.BOTH)
+
+    for calculation, result in previous_calculations:
+        history_text.insert(tk.END, f"{calculation}\n", "calculation")
+        history_text.insert(tk.END, f"= {result}\n\n", "result")
+
+    history_text.tag_config("calculation", foreground="black")
+    history_text.tag_config("result", foreground="gray")
+    history_text.config(state=tk.NORMAL)
+
+    copy_button = tk.Button(history_window, text="Copy", command=copy_selected, bg="#e0e0e0", font=('Google Sans', 12))
+    copy_button.pack(fill=tk.X)
 
 top_frame = tk.Frame(root, bg="#000000")
 top_frame.grid(row=0, column=0, columnspan=4, pady=4, sticky="nsew")
@@ -77,7 +102,7 @@ top_frame.grid_columnconfigure(3, weight=1)
 mode_button = tk.Button(top_frame, image=sun_icon, padx=10, pady=10, command=switch_mode)
 mode_button.grid(row=0, column=1, padx=2)
 
-history_button = tk.Button(top_frame, image=history_icon, padx=10, pady=10)
+history_button = tk.Button(top_frame, image=history_icon, padx=10, pady=10, command=open_history)
 history_button.grid(row=0, column=2, padx=2)
 
 root.grid_columnconfigure(0, weight=1)
@@ -115,4 +140,3 @@ for i in range(2, 8):
 
 apply_theme()
 root.mainloop()
-
