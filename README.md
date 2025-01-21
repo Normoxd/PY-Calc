@@ -1,4 +1,4 @@
-# py-calc
+# PY-Calc 1.0
 A simple calculator based on python
 
 *(This is not made for everyday use, just little fun project)*
