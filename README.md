@@ -16,4 +16,4 @@ Also make sure you have [tkinter](https://docs.python.org/3/library/tkinter.html
 
 # Overview
 
-![alt text](https://github.com/Normo1186/py-calc/blob/PY-Calc-v1.1/overview/overview.png?raw=true)
+![Overview]((https://github.com/Normo1186/PY-Calc/blob/main/overview.png?raw=true)
