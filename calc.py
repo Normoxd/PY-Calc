@@ -3,17 +3,8 @@ from tkinter import PhotoImage, Toplevel
 
 root = tk.Tk()
 root.title("Calculator")
-root.geometry("320x500")
+root.geometry("300x500")
 root.resizable(0, 0)
-
-try:
-    moon_icon = PhotoImage(file="/path/to/moon.png").subsample(6, 6)
-    sun_icon = PhotoImage(file="/path/to/sun.png").subsample(6, 6)
-    history_icon = PhotoImage(file="/path/to/clock.png").subsample(6, 6)
-except Exception as e:
-    print(f"Error loading icons: {e} \n")
-    print("Make sure you changed the place-holder paths to the actual icon file paths :)")
-    exit()
 
 is_dark_mode = True
 previous_calculations = []
@@ -25,22 +16,25 @@ def switch_mode():
 
 def apply_theme():
     if is_dark_mode:
-        root.configure(bg="#121212")
-        entry.config(bg="#1e1e1e", fg="#ffffff")
-        mode_button.config(image=sun_icon, bg="#1e1e1e", activebackground="#333333")
-        history_button.config(bg="#1e1e1e", activebackground="#333333")
-        button_config(bg="#333333", fg="#ffffff", activebackground="#444444")
-        equal_button.config(bg="#6A0DAD", fg="#ffffff", activebackground="#7b1fa2")
-        top_frame.config(bg="#121212")
-    else:
-        root.configure(bg="#ffffff")
-        entry.config(bg="#f0f0f0", fg="#000000")
-        mode_button.config(image=moon_icon, bg="#ffffff", activebackground="#d0d0d0")
-        history_button.config(bg="#ffffff", activebackground="#d0d0d0")
-        button_config(bg="#f0f0f0", fg="#000000", activebackground="#e0e0e0")
-        equal_button.config(bg="#ffcc00", fg="#000000", activebackground="#ffd633")
-        top_frame.config(bg="#ffffff")
+        top_frame.config(bg="#121213")
+        root.configure(bg="#121213")
+        entry.config(bg="#0e0e0e", fg="#f0f0f0")
+        mode_button.config(text="☀", bg="#1e1e1e", fg="#999900", activebackground="#0e0e0e")
+        history_button.config(bg="#1e1e1e", fg="#776633", activebackground="#0e0e0e")
+        about_button.config(bg="#1e1e1e", fg="#771122", activebackground="#0e0e0e")
+        button_config(bg="#0e0e0e", fg="#ffffff", activebackground="#666666")
+        equal_button.config(bg="#6A0DAD", fg="#ffffff", activebackground="#9b3fA2")
 
+    else:
+        top_frame.config(bg="#ffffff")
+        root.configure(bg="#ffffff")
+        entry.config(bg="#f0f0f0", fg="#0e0e0e")
+        mode_button.config(text="🌙", bg="#f0f0f0", fg="#999900", activebackground="#d0d0d0")
+        history_button.config(bg="#f0f0f0", fg="#776633", activebackground="#d0d0d0")
+        about_button.config(bg="#f0f0f0", fg="#661122", activebackground= "#d0d0d0")
+        button_config(bg="#f0f0f0", fg="#1e1e1e", activebackground="#e0e0e0")
+        equal_button.config(bg="#ffcc00", fg="#000000", activebackground="#ffd633")
+   
 def button_config(bg, fg, activebackground):
     for button in buttons:
         button.config(bg=bg, fg=fg, activebackground=activebackground)
@@ -64,53 +58,57 @@ def button_equal():
         entry.delete(0, tk.END)
         entry.insert(0, "Error")
 
+def open_about():
+    about_window = Toplevel(root)
+    about_window.title("About")
+    about_window.geometry("350x350")
+
+    about_text = tk.Text(about_window, bg="#0e0e0e", fg="#999999", font=("Source Code Pro", 17))
+    about_text.pack(expand=True, fill=tk.BOTH)
+    about_text.insert(tk.END, "\n🖩 PY-Calc v1.1\n")
+    about_text.insert(tk.END, "\n\n\nWhat's New!\n\n- New colors\n- a About window\n- Icons got replaced by emojis\n\n")
+    
+
 def open_history():
     history_window = Toplevel(root)
     history_window.title("History")
-    history_window.geometry("300x425")
+    history_window.geometry("275x380")
+    history_window.resizable(0, 0)
 
-    def copy_selected():
-        try:
-            selected_text = history_text.selection_get()
-            root.clipboard_clear()
-            root.clipboard_append(selected_text)
-            root.update()
-        except:
-            pass
-
-    history_text = tk.Text(history_window, wrap=tk.WORD, font=('Google Sans', 14), bg="#f0f0f0")
+    history_text = tk.Text(history_window, wrap=tk.WORD, font=("Comfortaa", 19), bg="#121212")
     history_text.pack(expand=True, fill=tk.BOTH)
 
     for calculation, result in previous_calculations:
         history_text.insert(tk.END, f"{calculation}\n", "calculation")
         history_text.insert(tk.END, f"= {result}\n\n", "result")
 
-    history_text.tag_config("calculation", foreground="black")
-    history_text.tag_config("result", foreground="gray")
-    history_text.config(state=tk.NORMAL)
 
-    copy_button = tk.Button(history_window, text="Copy", command=copy_selected, bg="#e0e0e0", font=('Comfortaa', 12))
-    copy_button.pack(fill=tk.X)
+    history_text.tag_config("calculation", foreground="grey")
+    history_text.tag_config("result", foreground="#00a973")
+    history_text.config(state=tk.NORMAL)
 
 top_frame = tk.Frame(root, bg="#000000")
 top_frame.grid(row=0, column=0, columnspan=4, pady=4, sticky="nsew")
 
-top_frame.grid_columnconfigure(0, weight=1)
+top_frame.grid_columnconfigure(0, weight=0)
 top_frame.grid_columnconfigure(1, weight=0)
 top_frame.grid_columnconfigure(2, weight=0)
-top_frame.grid_columnconfigure(3, weight=1)
+top_frame.grid_columnconfigure(3, weight=0)
 
-mode_button = tk.Button(top_frame, image=sun_icon, padx=10, pady=10, command=switch_mode)
+mode_button = tk.Button(top_frame, text="☀️", padx=1, pady=1, command=switch_mode, font=("Noto Color Emoji", 12))
 mode_button.grid(row=0, column=1, padx=2)
 
-history_button = tk.Button(top_frame, image=history_icon, padx=10, pady=10, command=open_history)
+history_button = tk.Button(top_frame, text="⏰", padx=1, pady=1, command=open_history, font=("Noto Color Emoji", 12))
 history_button.grid(row=0, column=2, padx=2)
+
+about_button = tk.Button(top_frame, text="❓", padx=1, pady=1, command=open_about, font=("Noto Color Emoji", 12))
+about_button.grid(row=0, column=3, padx=3)
 
 root.grid_columnconfigure(0, weight=1)
 top_frame.grid_columnconfigure(0, weight=1)
-top_frame.grid_columnconfigure(3, weight=1)
+top_frame.grid_columnconfigure(4, weight=1)
 
-entry = tk.Entry(root, width=16, borderwidth=0, font=('Google Sans', 36), justify='right')
+entry = tk.Entry(root, width=16, borderwidth=0, font=("Comfortaa", 32), justify="right")
 entry.grid(row=1, column=0, columnspan=4, padx=10, pady=10)
 
 buttons = []
@@ -125,11 +123,11 @@ button_texts = [
 
 for (text, row, column) in button_texts:
     if text == '=':
-        equal_button = tk.Button(root, text=text, padx=50, pady=50, font=('Comfortaa', 18, 'bold'),
+        equal_button = tk.Button(root, text=text, padx=50, pady=50, font=("Comfortaa", 18, "bold"),
                                  command=button_equal)
         equal_button.grid(row=row, column=column, sticky="nsew")
     else:
-        button = tk.Button(root, text=text, padx=50, pady=50, font=('Comfortaa', 18),
+        button = tk.Button(root, text=text, padx=50, pady=50, font=("Comfortaa", 18),
                            command=lambda txt=text: button_click(txt) if txt not in ['=', 'C', '⌫'] else button_clear() if txt == 'C' else entry.delete(len(entry.get()) - 1) if txt == '⌫' else None)
         button.grid(row=row, column=column, sticky="nsew")
         buttons.append(button)
