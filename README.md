@@ -1,16 +1,19 @@
-# PY-Calc 1.0
-A simple calculator based on python
+# PY-Calc 1.1
+A simple GUI calculator based on python
 
 *(This is not made for everyday use, just little fun project)*
 
-# NOTE
-To make it work, you need to update the 10th, 11th, and 12th lines of the code:
+To install, Run the following command on your terminal or manually save the calc.py file.
+`curl -O -L https://github.com/Normo1186/py-calc/raw/PY-Calc-v1.1/calc.py`
 
-- Replace the placeholder paths for the Moon-icon, Sun-icon, and History-icon with the actual paths to your icon files.
-- You can use the icons provided in this repository or create your own.
+Also make sure you have [tkinter](https://docs.python.org/3/library/tkinter.html) installed!
 
-Make sure you have [tkinter](https://docs.python.org/3/library/tkinter.html) installed.
+# What's New
+
+- New colors
+- a About window
+- Icons got replaced by emojis
 
 # Overview
 
-![alt text](https://github.com/Normo1186/py-calc/blob/main/overview/overview.png?raw=true)
+![alt text](https://github.com/Normo1186/py-calc/blob/PY-Calc-v1.1/overview/overview.png?raw=true)
