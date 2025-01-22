@@ -1,6 +1,6 @@
-# PY-Calc 1.1
-A simple GUI calculator based on python
+# PY-Calc v1.1
 
+A simple GUI calculator based on Python
 *(This is not made for everyday use, just little fun project)*
 
 To install, Run the following command on your terminal or manually save the calc.py file.
