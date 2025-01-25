@@ -10,7 +10,8 @@ A simple GUI calculator based on Python
 - Icons got replaced by emojis
 
 
-# INSTALL GUIDE (Even your grandma can install PY-Calc with this guide)
+# INSTALL GUIDE
+**(Even your grandma can install PY-Calc with this guide)**
 
 1. To install, Run the following command on your terminal or [click here](https://github.com/Normo1186/PY-Calc/releases/download/v1.1/calc.py) to download it!
 ``` bash
