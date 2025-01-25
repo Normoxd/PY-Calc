@@ -11,6 +11,7 @@ A simple GUI calculator based on Python
 
 
 # INSTALL GUIDE
+
 **(Even your grandma can install PY-Calc with this guide)**
 
 1. To install, Run the following command on your terminal or [click here](https://github.com/Normo1186/PY-Calc/releases/download/v1.1/calc.py) to download it!
@@ -43,6 +44,7 @@ sudo pacman -S tk
 
 - On MacOS
 ``` bash
+echo I don't know, find it yourself if you don't want to be a duma$$ like i am
 ```
 
 3. Run this command to run the calc.py, make sure the current working directory is the home directory or the downloads folder! that's where PY-Calc lives if you used the command or the hyperlink to install it!
