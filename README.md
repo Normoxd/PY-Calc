@@ -3,6 +3,8 @@
 A simple GUI calculator based on Python
 *(This is not made for everyday use, just little fun project)*
 
+# INSTALL GUIDE
+
 1. To install, Run the following command on your terminal or [click here](https://github.com/Normo1186/PY-Calc/releases/download/v1.1/calc.py) to download it!
 ``` bash
 curl -O -L (https://github.com/Normo1186/PY-Calc/releases/download/v1.1/calc.py)
@@ -12,8 +14,30 @@ curl -O -L (https://github.com/Normo1186/PY-Calc/releases/download/v1.1/calc.py)
 ``` bash
 import tkinter
 ```
+3 if the command above gives you a error that mean tkinter is not installed, run this command to install it
 
-4. Run this command to run the calc.py, make sure the current working directory is the home direcotry! that's where PY-Calc lives
+- on Windows, tkinter is installed by defsult by the python installer
+- on Linux, tkinter is not installed by default as i remember
+
+(For Debian/Ubuntu-based distributions)
+``` bash
+sudo apt install python3-tk
+```
+(For Fedora/Red Hat-based distributions)
+``` bash
+sudo dnf install python3-tkinter
+```
+
+(For Arch Linux-based distributions)
+``` bash
+sudo pacman -S tk
+```
+
+- On MacOS
+``` bash
+```
+
+3. Run this command to run the calc.py, make sure the current working directory is the home direcotry! that's where PY-Calc lives if you used the command to install it!
 ```bash
 python3 calc.py
 ```
