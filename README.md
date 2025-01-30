@@ -18,4 +18,4 @@ A simple GUI calculator based on Python
 
 # Overview
 
-![Overview](https://github.com/Normo1186/PY-Calc/download/v1.2/overview.png?raw=true)
+![Overview](https://github.com/Normo1186/PY-Calc/releases/download/v1.2/overview.png)
