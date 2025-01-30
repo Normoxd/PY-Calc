@@ -1,5 +1,5 @@
 # ☕ You can freely change every single bit of value of this code, as long as they are using the correct format!
-# THIS CODE IS LISENCED UNDER THE "GNU GENERAL PUBLIC LICENSE"
+# THIS CODE IS LICENSED UNDER THE "GNU GENERAL PUBLIC LICENSE"
 # Credits for ChatGPT for building the structure of the design and the math and helping me debug the code. I couldn't hold the feeling of cheating by using ChatGPT so excuse me for using 🙏, it i was not that comfortable with tikinter when i was making this project a year ago but now i'm a bit more comfortable with tkinter.
 
 version = "v1.2"
