@@ -1,6 +1,7 @@
 # PY-Calc v1.2
 
 A simple GUI calculator based on Python
+
 *(This is not made nor optimized for everyday use, just little fun project that i made to get the concept of python tkinter)*
 
 # What's New
