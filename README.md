@@ -13,7 +13,7 @@ A simple GUI calculator built using Python tkinter
 - Adaptive Dark/Light mode for About and History window
 
 # How to Install
-Run the following command on your terminal or [click here](https://github.com/Normo1186/PY-Calc/download/main/calc.py) to download it!
+Run the following command on your terminal or [click here](https://github.com/Normo1186/PY-Calc/releases/download/v1.2/calc.py) to download it!
 ``` bash
 curl -O -L https://github.com/Normo1186/PY-Calc/blob/main/calc.py
 ```
