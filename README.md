@@ -10,7 +10,6 @@ A simple GUI calculator built using Python tkinter
 
 - Mini view and regular view toggle 
 - Better code explaining and formatting
-- The window title finally got renamed to PY-Calc for better project recognition.
 - Adaptive Dark/Light mode for About and History window
 
 # How to Install
