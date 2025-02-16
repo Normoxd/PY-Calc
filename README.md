@@ -15,5 +15,5 @@ A simple GUI calculator built using Python tkinter
 # How to Install
 Run the following command on your terminal or [click here](https://github.com/Normo1186/PY-Calc/releases/download/v1.2/calc.py) to download it!
 ``` bash
-curl -O -L https://github.com/Normo1186/PY-Calc/blob/main/calc.py
+curl -O -L https://github.com/Navindu-Senehas/PY-Calc/blob/main/calc.py
 ```
