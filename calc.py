@@ -1,6 +1,4 @@
-# ☕ You can freely change every single bit of value of this code, as long as they are using the correct format!
 # THIS CODE IS LICENSED UNDER THE "GNU GENERAL PUBLIC LICENSE"
-# Credits for ChatGPT for building the structure of the design and the math and helping me debug the code. I couldn't hold the feeling of cheating by using ChatGPT so excuse me for using 🙏, it i was not that comfortable with tikinter when i was making this project a year ago but now i'm a bit more comfortable with tkinter.
 
 version = "v1.2"
 whatsnew = "1. Adaptive Dark/Light mode for About and History window \n2. a Mini view mode \n3.Better code explaining and formatting \n4. The window title finally got renamed to PY-Calc for better project recognition.\n"
@@ -10,16 +8,12 @@ import tkinter as tk
 from tkinter import PhotoImage, Toplevel
 
 # MAIN WINDOW CONFIGS
-# The window size is hard coded (8 or 9 lines) into the code because i couldn't find a better way to detect the mini view and the regular view, if you got a solution, hit me up on discord!
-# The easiest way to correctly edit the window size is to use the replace all feature
+# The window size is hard coded into the code, Use the replace feature to correctly edit the window size
 
 root = tk.Tk()
 root.title("PY-Calc " + version)
-def_window_size=("160x280")
-current_window_size=("240x440")
 root.geometry("250x440")
-# Should i make the window resizable? i don't know. it will be non resizable for now i guess
-# make the line below to (1, 1) to make the main window resizable, but it sucks at adapting custom sizes but hey it's always your preference!
+# Make the line below to (1, 1) to make the main window resizable
 root.resizable(0, 0)
 
 top_frame = tk.Frame(root, bg="#000000")
@@ -71,8 +65,6 @@ def open_history():
     apply_theme_to_about()
     apply_theme_to_history()
 
-# Set the miniview_is_enabled to true if you want to make the mini view your default view
-
 global miniview_is_enabled
 miniview_is_enabled = False
 
@@ -95,13 +87,7 @@ def miniview_switcher():
 
 # THEME CONFIGS
 
-# The default mode is dark mode. mostly because i'm a night owl, you can change it to your preference
-# If you want the default to be light mode, set "is_dark_mode" to False. no quote marks!
-
-# Also #0e0e0e for dark mode and #f0f0f0 for light mode looks so much better than blank black or white
-# You should try it out in your projects as well and it's easy to type out as well!
-
-is_dark_mode = True
+is_dark_mode = True #Make it 'false' to make light mode the default
 previous_calculations = []
 
 def switch_mode():
@@ -237,6 +223,3 @@ for i in range(2, 8):
 
 apply_theme()
 root.mainloop()
-
-# The barebones true first version will be released on GitHub as 'alphav1.0' if i were to find that copy of the file on my old windows machine.
-# New updates will be released per month or per 2 months as i can say! oh god i'm so obsessed with the ! sign lol
