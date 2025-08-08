@@ -9,11 +9,8 @@ A simple GUI calculator built using Python tkinter
 # What's New
 
 - Mini view and regular view toggle 
-- Better code explaining and formatting
+- Better code explanation and formatting
 - Adaptive Dark/Light mode for About and History window
 
 # How to Install
-Run the following command on your terminal or [click here](https://github.com/Navindu-Senehas/PY-Calc/releases/download/v1.2/calc.py) to download it!
-``` bash
-curl -O -L https://github.com/Navindu-Senehas/PY-Calc/blob/main/calc.py
-```
+[Download calc.py](https://github.com/Navindu-Senehas/PY-Calc/releases/download/v1.2/calc.py) and run it.
