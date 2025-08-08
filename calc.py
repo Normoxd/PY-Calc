@@ -2,7 +2,7 @@
 
 version = "v1.2"
 whatsnew = "1. Adaptive Dark/Light mode for About and History window \n2. a Mini view mode \n3.Better code explaining and formatting \n4. The window title finally got renamed to PY-Calc for better project recognition.\n"
-knownbugs = "1. [Not Fixed]\n\non Windows the emojis for buttons will be just unicode characters, i tried to make the button font to switch to Segoe UI Emoji but the problem is with the Emoji support on Python for Windows as i can say. I'm only using builtin fonts because i want this to be portable as much as possible. any solutions without custom fonts?\n\n2. [FIXED]\n\nWhen using the mini view button then revert will make the revert button be stuck on the regular view stopping you from switching to mini view. This happend because of a issue of the code that was there to detect the current mode\n"
+knownbugs = "1. [Not Fixed]\n\non Windows the emojis for buttons will be just unicode emojis. (It's a feature)\n\n"
 
 import tkinter as tk
 from tkinter import PhotoImage, Toplevel
